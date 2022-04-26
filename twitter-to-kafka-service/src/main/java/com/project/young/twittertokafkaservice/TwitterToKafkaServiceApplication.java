@@ -1,6 +1,7 @@
 package com.project.young.twittertokafkaservice;
 
 import com.project.young.config.TwitterToKafkaServiceConfigData;
+import com.project.young.twittertokafkaservice.init.StreamInitializer;
 import com.project.young.twittertokafkaservice.runner.StreamRunner;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -18,8 +19,8 @@ import java.util.Arrays;
 public class TwitterToKafkaServiceApplication implements CommandLineRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(TwitterToKafkaServiceApplication.class);
-    private final TwitterToKafkaServiceConfigData twitterToKafkaServiceConfigData;
     private final StreamRunner streamRunner;
+    private final StreamInitializer streamInitializer;
 
     public static void main(String[] args) {
         SpringApplication.run(TwitterToKafkaServiceApplication.class, args);
@@ -28,8 +29,7 @@ public class TwitterToKafkaServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         LOG.info("App starts...");
-        LOG.info(Arrays.toString(twitterToKafkaServiceConfigData.getTwitterKeywords().toArray(new String[] {})));
-        LOG.info(twitterToKafkaServiceConfigData.getWelcomeMessage());
+        streamInitializer.init();
         streamRunner.start();
     }
 }
