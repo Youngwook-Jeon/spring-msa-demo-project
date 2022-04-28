@@ -1,0 +1,24 @@
+server:
+  port: 8888
+
+logging:
+  level:
+    ROOT: DEBUG
+    org.spring.framework.cloud.config: DEBUG
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Youngwook-Jeon/spring-cloud-config-server-repository
+          clone-on-start: true
+          username: Youngwook-Jeon
+          password: '****'
+      fail-fast: true
+  security:
+    user:
+      name: spring_cloud_user
+      password: '----'

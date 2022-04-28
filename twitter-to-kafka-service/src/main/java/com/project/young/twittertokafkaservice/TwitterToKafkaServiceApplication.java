@@ -1,6 +1,5 @@
 package com.project.young.twittertokafkaservice;
 
-import com.project.young.config.TwitterToKafkaServiceConfigData;
 import com.project.young.twittertokafkaservice.init.StreamInitializer;
 import com.project.young.twittertokafkaservice.runner.StreamRunner;
 import lombok.RequiredArgsConstructor;
@@ -10,8 +9,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-
-import java.util.Arrays;
 
 @RequiredArgsConstructor
 @SpringBootApplication
