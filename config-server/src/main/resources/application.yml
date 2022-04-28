@@ -3,7 +3,7 @@ server:
 
 logging:
   level:
-    ROOT: DEBUG
+    ROOT: INFO
     org.spring.framework.cloud.config: DEBUG
 
 spring:
@@ -16,9 +16,10 @@ spring:
           uri: https://github.com/Youngwook-Jeon/spring-cloud-config-server-repository
           clone-on-start: true
           username: Youngwook-Jeon
-          password: '****'
+          password: '{cipher}3c23e4d97f30009b12b7285bc5fec7883c74e17e2e6434a054c029d782ff456386a0b4ff8938f5c3ae49fe9ffbdb505d7f2e9a4b11195c6f0058be577d98b12f'
       fail-fast: true
   security:
     user:
       name: spring_cloud_user
-      password: '----'
+      password: '{cipher}571ecc0b622f5c446bc6515a1c34c83e3b64646839b7fa935745fcf0bc2516ab'
+

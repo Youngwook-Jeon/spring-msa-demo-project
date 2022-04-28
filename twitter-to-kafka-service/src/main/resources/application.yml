@@ -8,3 +8,5 @@ spring:
   cloud:
     config:
       name: twitter-to-kafka-service,config-client
+      username: spring_cloud_user
+      password: '{cipher}571ecc0b622f5c446bc6515a1c34c83e3b64646839b7fa935745fcf0bc2516ab'
